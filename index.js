@@ -19,14 +19,24 @@ const list = (name) => {
   return { name };
 }
 
+const classDefaults = {
+  title: 'no title',
+  description: 'no description',
+  dueDate: 'no dueDate',
+  priority: 'no priority',
+  notes: 'no notes',
+  checklist: 'no checklist',
+}
 class Item {
   constructor(options) {
-    title = options.title || 'no title';
-    description = options.description || 'no description';
-    dueDate = options.dueDate || 'no dueDate';
-    priority = options.priority || 'no priority';
-    notes = options.notes || 'no notes';
-    checklist = options.checklist || 'no checklist';
+    const {
+      title,
+      description,
+      dueDate,
+      priority,
+      notes,
+      checklist
+    } = options;
   }
 }
 
