@@ -1,54 +1,43 @@
-console.log('welcome');
-
-const item = (options) => {
-  const title = options.title || 'no title';
-  const description = options.description || 'no description';
-  const dueDate = options.dueDate || 'no dueDate';
-  const priority = options.priority || 'no priority';
-  const notes = options.notes || 'no notes';
-  const checklist = options.checklist || 'no checklist';
-  return { title, description, dueDate, priority, notes, checklist }
-}
-
-const list = (name) => {
-  const name = name;
-  let list = [];
-  const setList = (list) => {
-    list = list;
-  }
-  return { name };
-}
+console.log('begin');
 
 const classDefaults = {
-  title: 'no title',
-  description: 'no description',
-  dueDate: 'no dueDate',
-  priority: 'no priority',
-  notes: 'no notes',
-  checklist: 'no checklist',
+  title: 'Default title',
+  description: 'Default description',
+  dueDate: 'Default dueDate',
+  priority: 'Default priority',
+  notes: 'Default notes',
+  checklist: 'Default checklist',
 }
-class Item {
+
+class TodoList {
   constructor(options) {
-    const {
-      title,
-      description,
-      dueDate,
-      priority,
-      notes,
-      checklist
-    } = options;
+    this.options = { ...classDefaults, ...options };
   }
 }
 
-class List {
-  constructor(items){
-    this._list = items;
+class Project {
+  constructor() {
+
   }
-  _list = [];
+
+  lists = [];
+
+  addList(list) {
+    this.lists.push(list);
+  }
 }
 
-const defaultOptions = () => {
-  
-}
+const myProject = new Project();
 
-const defaultList = new List();
+const myTodoList = new TodoList({
+  title: 'myTitle',
+  description: 'myDescription',
+  dueDate: 'myDueDate',
+  priority: 'myPriority',
+})
+
+myProject.addList(myTodoList);
+
+console.log(myTodoList);
+console.log(myProject);
+
