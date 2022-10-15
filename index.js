@@ -1,31 +1,5 @@
-console.log('begin');
-
-const classDefaults = {
-  title: 'Default title',
-  description: 'Default description',
-  dueDate: 'Default dueDate',
-  priority: 'Default priority',
-  notes: 'Default notes',
-  checklist: 'Default checklist',
-}
-
-class TodoList {
-  constructor(options) {
-    this.options = { ...classDefaults, ...options };
-  }
-}
-
-class Project {
-  constructor() {
-
-  }
-
-  lists = [];
-
-  addList(list) {
-    this.lists.push(list);
-  }
-}
+import { Project } from "./Project";
+import { TodoList } from "./TodoList";
 
 const myProject = new Project();
 
@@ -38,6 +12,6 @@ const myTodoList = new TodoList({
 
 myProject.addList(myTodoList);
 
-console.log(myTodoList);
-console.log(myProject);
+console.log('myTodoList', myTodoList);
+console.log('myProject', myProject);
 
