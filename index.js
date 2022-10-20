@@ -14,4 +14,3 @@ myProject.addList(myTodoList);
 
 console.log('myTodoList', myTodoList);
 console.log('myProject', myProject);
-
